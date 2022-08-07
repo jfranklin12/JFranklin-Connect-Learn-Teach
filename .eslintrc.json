@@ -26,7 +26,7 @@
     "no-use-before-define": "warn",
     "no-redeclare": "warn",
     "brace-style": "warn",
-    "indent": ["warn", 2],
+    "indent": ["warn", 4],
     "quotes": ["warn", "single"],
     "semi": ["warn", "always"],
     "radix": "off"
