@@ -1,22 +1,45 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Post } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-        res.render('home');
+        const postData = await Post.finaAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                }
+            ]
+        });
+
+        const posts = postData.map((post) => post.get ({ plain: true }));
+
+        res.render('home', {
+            posts,
+            logged_in: req.session.logged_in
+        });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/post/:id', async (req, res) => {
     try {
-        const UserInfo = await User.findByPk(req.params.id);
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+            ],
+        });
 
-        const serializedUserData = UserInfo.get({ plain:true });
-        console.log(serializedUserData);
+        const post = postData.get({ plain:true });
 
-        res.render('home', serializedUserData);
+        res.render('post', {
+            post,
+            logged_in: req/session.logged_in
+        });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -25,7 +48,7 @@ router.get('/:id', async (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/profile');
+        res.redirect('/');
         return;
     }
 
