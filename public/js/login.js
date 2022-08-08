@@ -13,7 +13,7 @@ const signUpHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
         console.log(response);
-    };
+    }
 };
 
 document.getElementById('signup-submit').addEventListener('click', signUpHandler);
