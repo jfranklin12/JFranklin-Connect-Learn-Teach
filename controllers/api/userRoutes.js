@@ -52,14 +52,24 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
-    try {
-        const UserInfo = await User.findByPk(req.params.id);
-
-        res.status(200).json(UserInfo);
-    } catch (err) {
-        res.status(500).json(err);
+router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
     }
 });
+
+// router.get('/:id', async (req, res) => {
+//     try {
+//         const UserInfo = await User.findByPk(req.params.id);
+
+//         res.status(200).json(UserInfo);
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 module.exports = router;
