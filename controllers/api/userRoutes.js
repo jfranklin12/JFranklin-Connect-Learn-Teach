@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
         });
 
         req.session.save(() => {
-            req.session.loggen_in = true;
+            req.session.logged_in = true;
             res.status(200).json(dbUser);
         });
 
@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
 
         req.session.save(() => {
             req.session.user_id = dbUser.id;
-            req.session.loggen_in = true;
+            req.session.logged_in = true;
             res.status(200).json({ message: 'You are now loggen in!'});
         });
     } catch (err) {
