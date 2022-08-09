@@ -13,7 +13,13 @@ const loginHandler = async (event) => {
             body: JSON.stringify({ username, email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
-        console.log(response);
+        const results = await response.json();
+        console.log(results);
+        if(response.ok) {
+            document.location.replace('/');
+        } else {
+            alert(response.statusText);
+        }
     }
 };
 
