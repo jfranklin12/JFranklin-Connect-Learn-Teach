@@ -1,0 +1,17 @@
+[
+    {
+        "post_title": "Blog Post Numero Uno",
+        "post_text": "Here we go!",
+        "user_id": 1
+    },
+    {
+        "post_title": "Blog Post Numero Dos",
+        "post_text": "Here we go again!",
+        "user_id": 1
+    },
+    {
+        "post_title": "Blog Post Numero Tres",
+        "post_text": "Here we go again and again!",
+        "user_id": 1
+    }
+]
