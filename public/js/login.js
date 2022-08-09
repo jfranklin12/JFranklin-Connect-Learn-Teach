@@ -17,7 +17,7 @@ const loginHandler = async (event) => {
     }
 };
 
-document.getElementById('login-submit').addEventListener('click', loginHandler);
+document.getElementById('login-form').addEventListener('submit', loginHandler);
 
 
 
@@ -40,4 +40,4 @@ const signUpHandler = async (event) => {
     }
 };
 
-document.getElementById('signup-submit').addEventListener('click', signUpHandler);
+document.getElementById('signup-form').addEventListener('submit', signUpHandler);
