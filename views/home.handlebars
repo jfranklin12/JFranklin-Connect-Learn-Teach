@@ -1,12 +1,13 @@
 <div class="container">
 <h1 class="blog-title teal-text text-darken-3">Write to teach, read to learn, share to connect!</h1>
-    {{#each Posts as |post|}}
+    {{#each posts as |post|}}
     <div class="row">
         <div class="col s12">
             <div class="card indigo lighten-1">
                 <div class="card-content white-text">
                     <span class="card-title">{{post.post_title}}</span>
                     <p class="review-comment">{{post.post_text}}</p>
+                    <p>Created by {{user.name}} on {{format_date date_created}}</p>
                 </div>
             </div>
         </div>
