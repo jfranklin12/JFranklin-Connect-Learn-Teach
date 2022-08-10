@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var elems = document.querySelectorAll(".sidenav");
+    var instances = M.Sidenav.init(elems);
+    console.log(instances);
+});
+
 const logoutHandler = async () => {
     console.log('button click');
     const response = await fetch('/api/user/logout', {
