@@ -1,15 +1,15 @@
 <div class="container">
-    {{#each Posts as |post|}}
+<h2>{{post.user.username}}'s Blog Post</h2>
     <div class="row">
         <div class="col s12">
-            <div class="card">
+            <div class="card indigo lighten-1">
                 <div class="card-content white-text">
-                    <span class="card-title">{{post.post_title}}</span>
+                    <span class="card-title card-head">{{post.post_title}}</a></span>
                     <p class="review-comment">{{post.post_text}}</p>
-                    <p>Created by {{user.name}} on {{format_date date_created}}</p>
+                    <p>Created on {{format_date date_created}}</p>
                 </div>
             </div>
         </div>
     </div>
-    {{/each}}
+
 </div>

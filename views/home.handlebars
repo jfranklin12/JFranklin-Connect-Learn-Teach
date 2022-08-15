@@ -5,9 +5,9 @@
         <div class="col s12">
             <div class="card indigo lighten-1">
                 <div class="card-content white-text">
-                    <span class="card-title">{{post.post_title}}</span>
+                    <span class="card-title card-head"><a href="/post/{{post.id}}">{{post.post_title}}</a></span>
                     <p class="review-comment">{{post.post_text}}</p>
-                    <p>Created by {{user.name}} on {{format_date date_created}}</p>
+                    <p>Created by {{post.username}} on {{format_date date_created}}</p>
                 </div>
             </div>
         </div>
