@@ -1,12 +1,12 @@
 <div class="container">
-<h2>{{post.user.username}}'s Blog Post</h2>
+<h2>{{post.User.username}}'s Blog Post</h2>
     <div class="row">
         <div class="col s12">
             <div class="card indigo lighten-1">
                 <div class="card-content white-text">
                     <span class="card-title card-head">{{post.post_title}}</a></span>
                     <p class="review-comment">{{post.post_text}}</p>
-                    <p>Created on {{format_date date_created}}</p>
+                    <p>Posted {{format_date post.date_created}}</p>
                 </div>
             </div>
         </div>
