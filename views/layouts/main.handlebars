@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
       
-    <title>Connect Learn Teach</title>
+    <title>Teach Learn Connect</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -21,9 +21,9 @@
      {{!--Navbar  --}}
     <nav>
         <div class="nav-wrapper indigo darken-2">
-            <a href="/" class="brand-logo">💻</a>
+            <a href="/" class="brand-logo">💻Teach, Learn, Connect</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
+            <ul class="right hide-on-med-and-down nav-links">
                 <li><a href="/">Homepage</a></li>
                 <li><a href="/profile">Dashboard</a></li>
                 {{#if logged_in}}
@@ -36,13 +36,13 @@
     </nav>
     {{!-- mobile navbar --}}
              
-            <ul class="sidenav" id="mobile-demo">
-                <li><a href="/">Homepage</a></li>
-                <li><a href="/profile">Dashboard</a></li>
+            <ul class="sidenav indigo lighten-4 nav-links" id="mobile-demo">
+                <li><a href="/" class="teal-text text-darken-4">Homepage</a></li>
+                <li><a href="/profile" class="teal-text text-darken-4">Dashboard</a></li>
                 {{#if logged_in}}
-                <li><a id="logout_navbar">Logout</a></li>
+                <li><a id="logout_navbar" class="teal-text text-darken-4">Logout</a></li>
                 {{else}}
-                <li><a href="/login">Login</a></li>                
+                <li><a href="/login" class="teal-text text-darken-4">Login</a></li>                
                 {{/if}}
             </ul>
            

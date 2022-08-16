@@ -16,3 +16,8 @@ a {
 a:hover {
   color: #1a237e
 }
+
+.nav-links :hover {
+  color: #004d40;
+  background-color: #80cbc4  ;
+}
